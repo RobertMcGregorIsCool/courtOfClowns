@@ -15,7 +15,10 @@ run/main_scene="res://Levels/court01.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
-<<<<<<< HEAD
+[autoload]
+
+AudioManager="*res://Audio/audio_manager.tscn"
+
 [input]
 
 p1_move_fwd={
@@ -90,11 +93,6 @@ p2_do={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
 ]
 }
-=======
-[autoload]
-
-AudioManager="*res://Audio/audio_manager.tscn"
->>>>>>> d95ff134ba20734ef3059da42745519499a7615b
 
 [rendering]
 
