@@ -14,6 +14,13 @@ config/name="CourtOfClowns01"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+
+=======
+[autoload]
+
+AudioManager="*res://Audio/audio_manager.tscn"
+
+
 [input]
 
 p1_move_fwd={
