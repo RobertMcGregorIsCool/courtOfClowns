@@ -14,4 +14,12 @@ func _physics_process(delta):
 	
 	var dir = Vector3 (input.x, 0, input.y)
 	velocity = dir * move_speed
+	
 	move_and_slide()
+	
+	if input.length() > 0:
+		facing_angle = Vector2(input.y, input.x).angle();
+		
+		#model.rotation.y = facing_angle;
+	
+		model.rotation.y = lerp_angle(model.rotation.y, facing_angle, 0.5)
