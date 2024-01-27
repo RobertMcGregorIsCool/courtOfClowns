@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pmbbcxv8ns0"]
+
+[ext_resource type="PackedScene" uid="uid://d4e3426qmldmk" path="res://3D Models/humanScaleReference01001RS.glb" id="1_iqmui"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykwlu"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+
+[node name="humanScaleReference01001RS" parent="." instance=ExtResource("1_iqmui")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.64, 0, 0, 0, 0.88, 0, 0, 0, 0.32, 0, 0.88, 0)
+shape = SubResource("CapsuleShape3D_ykwlu")
