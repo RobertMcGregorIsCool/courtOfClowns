@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ldkesso3rk2e"]
+
+[ext_resource type="AudioStream" uid="uid://bjr1fedbk10rc" path="res://Audio/Music/MusicLoop.ogg" id="1_f7xgt"]
+[ext_resource type="Script" path="res://Audio/audio_manager.gd" id="1_rejq2"]
+
+[node name="AudioManager" type="Node3D"]
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_f7xgt")
+volume_db = -4.0
+autoplay = true
+
+[node name="sfx_player" type="Node3D" parent="."]
+
+[node name="sfx_player_1" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_2" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_3" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_4" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_5" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_6" type="AudioStreamPlayer3D" parent="sfx_player"]
+script = ExtResource("1_rejq2")
+
+[node name="sfx_player_7" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_8" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_9" type="AudioStreamPlayer3D" parent="sfx_player"]
+
+[node name="sfx_player_10" type="AudioStreamPlayer3D" parent="sfx_player"]

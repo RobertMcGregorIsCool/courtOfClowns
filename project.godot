@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="CourtOfClowns01"
+run/main_scene="res://Levels/court01.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://Audio/audio_manager.tscn"
 
 [rendering]
 
