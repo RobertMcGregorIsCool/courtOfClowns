@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjy4paq57yu28"]
+[gd_scene load_steps=15 format=3 uid="uid://bjy4paq57yu28"]
 
 [ext_resource type="PackedScene" uid="uid://dft0qyjphj10t" path="res://EnvironmentBlocks/basic_block.tscn" id="1_82yl0"]
 [ext_resource type="PackedScene" uid="uid://c7p6led3126yf" path="res://3D Models/Throne.glb" id="2_36ngf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/courtier.gd" id="5_vwgvs"]
 [ext_resource type="PackedScene" uid="uid://qrtf7q0fsavr" path="res://3D Models/Child.glb" id="8_4wd0m"]
 [ext_resource type="PackedScene" uid="uid://jqo04pbswlst" path="res://3D Models/child_restraint.glb" id="9_6jrwy"]
+[ext_resource type="Script" path="res://Levels/Interact.gd" id="9_28123"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gt2ya"]
 
@@ -213,46 +214,49 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.8953
 
 [node name="MembersOfTheCourt" type="Node3D" parent="."]
 
-[node name="Courtier01" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier01" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
-[node name="Courtier02" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier02" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
-[node name="Courtier03" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier03" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
-[node name="Courtier04" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier04" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
-[node name="Courtier05" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier05" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
-[node name="Courtier06" parent="MembersOfTheCourt" instance=ExtResource("2_lgy8v")]
+[node name="Courtier06" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
 script = ExtResource("5_vwgvs")
-alarm = 5.0
 
 [node name="Players" type="Node3D" parent="."]
 
-[node name="Player01" parent="Players" instance=ExtResource("2_lgy8v")]
+[node name="Player01" parent="Players" groups=["Players"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4)
 script = ExtResource("3_dmxsu")
 
 [node name="RayCast3D" type="RayCast3D" parent="Players/Player01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, 1)
+script = ExtResource("9_28123")
+char_type = 1
 
-[node name="Player02" parent="Players" instance=ExtResource("2_lgy8v")]
+[node name="Player02" parent="Players" groups=["Players"] instance=ExtResource("2_lgy8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
 script = ExtResource("3_dmxsu")
 player_Number = 1
+
+[node name="RayCast3D" type="RayCast3D" parent="Players/Player02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, 1)
+script = ExtResource("9_28123")
+char_type = 2

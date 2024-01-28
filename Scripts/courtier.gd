@@ -11,11 +11,19 @@ var facing_angle : float = 0.0;
 const RAY_LENGTH = 1000
 
 @export var timer : float = 0.0
-@export var alarm : float = 10.0
+@export var alarm : float = 5.0
 
 @export var headingLength : float
 @export var headLengthThreshold : float = 1.0
 @export var move_speed : float = 1.0
+@export var walk_speed : float = 1.0
+@export var chase_speed: float = 2.0
+
+var target_player : CharacterBody3D = null
+var chaseMode : bool = false;
+
+@export var timerChase : float = 0.0
+@export var alarmChase : float = 10.0
 
 @onready var model : Node3D = get_node("humanScaleReference01001RS")
 
@@ -24,9 +32,19 @@ func _ready():
 	if !container.is_empty():
 		destination_setter = container.front()
 	global_position = _get_destination3d()
+	
+	var playerContainer = get_tree().get_nodes_in_group("Players")
 
 func _physics_process(delta):
 	_plotAndMove(delta)
+	
+	if(chaseMode):
+		timerChase += delta;
+		if(timerChase > alarmChase):
+			chaseMode = false
+			timerChase = 0
+			move_speed = walk_speed
+			destination3d = _get_destination3d()
 	
 	var space_state = get_world_3d().direct_space_state
 	var origin : Vector3 = global_position + Vector3.UP
@@ -41,7 +59,10 @@ func _plotAndMove(delta : float):
 	headingLength = _squared_magnitude(heading)
 	
 	if(headingLength < headLengthThreshold || timer > alarm): #This should also have a timer.
-		destination3d = _get_destination3d()
+		if(chaseMode):
+			destination3d = target_player.global_position
+		else:
+			destination3d = _get_destination3d()
 
 		timer = 0.0
 	else:
@@ -62,3 +83,10 @@ func _get_destination3d():
 	
 func _squared_magnitude(vect : Vector3):
 	return ((vect.x * vect.x) + (vect.y * vect.y) + (vect.z * vect.z))
+
+func go_chase_mode(playerToChase : CharacterBody3D):
+	if(!chaseMode):
+		chaseMode = true
+		move_speed = chase_speed
+		print("Chasing!")
+		target_player = playerToChase

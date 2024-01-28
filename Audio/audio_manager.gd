@@ -15,7 +15,7 @@ var _dict = {
 
 #-------------------------------------------------------------------------------
 # MUSIC AUDIO FILES
-var musicloop = load("res://Audio/Music/MusicLoop.ogg")
+var musicloop = load("res://Audio/Music/Music.ogg")
 
 # SFX AUDIO FILES
 #var player_jump = load("res://assets/audio/sfx/playerjump.wav")
