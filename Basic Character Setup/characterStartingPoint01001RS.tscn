@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://8pmbbcxv8ns0"]
+[gd_scene load_steps=4 format=3 uid="uid://8pmbbcxv8ns0"]
 
 [ext_resource type="PackedScene" uid="uid://d4e3426qmldmk" path="res://3D Models/humanScaleReference01001RS.glb" id="1_iqmui"]
+[ext_resource type="PackedScene" uid="uid://c5mb8a5wqqjxw" path="res://3D Models/Jester.glb" id="2_5yuxs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykwlu"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 
-[node name="humanScaleReference01001RS" parent="." instance=ExtResource("1_iqmui")]
+[node name="orig_humanScaleReference01001RS" parent="." instance=ExtResource("1_iqmui")]
+visible = false
+
+[node name="humanScaleReference01001RS" parent="." instance=ExtResource("2_5yuxs")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 0.88, 0, 0, 0, 0.64, 0, 0.88, 0)

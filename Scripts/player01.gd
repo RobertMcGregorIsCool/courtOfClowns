@@ -9,8 +9,13 @@ var facing_angle : float = 0.0;
 
 @onready var model : Node3D = get_node("humanScaleReference01001RS")
 
+enum PLAYER_NUM {p1,p2}
+
+@export var player_Number : PLAYER_NUM = PLAYER_NUM.p1
+
 func _physics_process(delta):
-	var input = Input.get_vector("p1_move_lft", "p1_move_rgt", "p1_move_fwd", "p1_move_bck")
+	var plyr : String = PLAYER_NUM.keys()[player_Number]
+	var input = Input.get_vector(plyr + "_move_lft", plyr + "_move_rgt", plyr + "_move_fwd", plyr + "_move_bck")
 	
 	var dir = Vector3 (input.x, 0, input.y)
 	velocity = dir * move_speed
