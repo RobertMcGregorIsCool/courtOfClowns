@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjy4paq57yu28"]
+[gd_scene load_steps=14 format=3 uid="uid://b7ig8xxyac4ib"]
 
-[ext_resource type="PackedScene" uid="uid://dft0qyjphj10t" path="res://EnvironmentBlocks/basic_block.tscn" id="1_82yl0"]
-[ext_resource type="PackedScene" uid="uid://c7p6led3126yf" path="res://3D Models/Throne.glb" id="2_36ngf"]
-[ext_resource type="PackedScene" uid="uid://8pmbbcxv8ns0" path="res://Basic Character Setup/characterStartingPoint01001RS.tscn" id="2_lgy8v"]
-[ext_resource type="Script" path="res://Scripts/player01.gd" id="3_dmxsu"]
-[ext_resource type="Script" path="res://Scripts/Destination-Setter.gd" id="4_fe502"]
-[ext_resource type="Script" path="res://Scripts/courtier.gd" id="5_vwgvs"]
-[ext_resource type="PackedScene" uid="uid://qrtf7q0fsavr" path="res://3D Models/Child.glb" id="8_4wd0m"]
-[ext_resource type="PackedScene" uid="uid://jqo04pbswlst" path="res://3D Models/child_restraint.glb" id="9_6jrwy"]
-[ext_resource type="Script" path="res://Levels/Interact.gd" id="9_28123"]
+[ext_resource type="PackedScene" uid="uid://c7p6led3126yf" path="res://3D Models/Throne.glb" id="1_yev4l"]
+[ext_resource type="PackedScene" uid="uid://dft0qyjphj10t" path="res://EnvironmentBlocks/basic_block.tscn" id="2_m32au"]
+[ext_resource type="Script" path="res://Scripts/Destination-Setter.gd" id="3_betl3"]
+[ext_resource type="PackedScene" uid="uid://qrtf7q0fsavr" path="res://3D Models/Child.glb" id="4_4ifva"]
+[ext_resource type="PackedScene" uid="uid://jqo04pbswlst" path="res://3D Models/child_restraint.glb" id="5_15nn3"]
+[ext_resource type="PackedScene" uid="uid://8pmbbcxv8ns0" path="res://Basic Character Setup/characterStartingPoint01001RS.tscn" id="6_2u3v7"]
+[ext_resource type="Script" path="res://Scripts/courtier.gd" id="7_vrqxu"]
+[ext_resource type="Script" path="res://Scripts/player01.gd" id="8_g72oc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gt2ya"]
 
@@ -35,16 +34,16 @@ tonemap_mode = 2
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="Tables" type="Node3D" parent="Environment"]
-visible = false
 
 [node name="BanquetTable01" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.125, -3)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Tables/BanquetTable01"]
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable01" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable01" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable03" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.125, -1.54)
@@ -54,7 +53,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable03" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable03" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable04" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.125, 2)
@@ -64,7 +63,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable04" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable04" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable05" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.125, 3)
@@ -74,7 +73,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable05" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable05" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable02" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.125, -3)
@@ -84,7 +83,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable02" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable02" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable06" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.125, -1.54)
@@ -94,7 +93,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable06" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable06" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable07" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.125, 2)
@@ -104,7 +103,7 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable07" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable07" instance=ExtResource("1_yev4l")]
 
 [node name="BanquetTable08" type="StaticBody3D" parent="Environment/Tables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.125, 3)
@@ -114,30 +113,30 @@ visible = false
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, 0, 0.61, 0)
 shape = SubResource("BoxShape3D_gt2ya")
 
-[node name="TableModel" parent="Environment/Tables/BanquetTable08" instance=ExtResource("2_36ngf")]
+[node name="TableModel" parent="Environment/Tables/BanquetTable08" instance=ExtResource("1_yev4l")]
 
-[node name="BasicBlock" parent="Environment/Tables" instance=ExtResource("1_82yl0")]
+[node name="BasicBlock" parent="Environment/Tables" instance=ExtResource("2_m32au")]
 transform = Transform3D(1.7, 0, 0, 0, 1.4, 0, 0, 0, 2.72, 3, 0.825, 2.3)
 
-[node name="BasicBlock2" parent="Environment/Tables" instance=ExtResource("1_82yl0")]
+[node name="BasicBlock2" parent="Environment/Tables" instance=ExtResource("2_m32au")]
 transform = Transform3D(1.7, 0, 0, 0, 1.4, 0, 0, 0, 2.72, -3, 0.825, 2.3)
 
-[node name="BasicBlock3" parent="Environment/Tables" instance=ExtResource("1_82yl0")]
+[node name="BasicBlock3" parent="Environment/Tables" instance=ExtResource("2_m32au")]
 transform = Transform3D(1.7, 0, 0, 0, 1.4, 0, 0, 0, 2.72, 3, 0.825, -2.7)
 
-[node name="BasicBlock4" parent="Environment/Tables" instance=ExtResource("1_82yl0")]
+[node name="BasicBlock4" parent="Environment/Tables" instance=ExtResource("2_m32au")]
 transform = Transform3D(1.7, 0, 0, 0, 1.4, 0, 0, 0, 2.72, -3, 0.825, -2.7)
 
-[node name="Floor" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="Floor" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(32, 0, 0, 0, 0.25, 0, 0, 0, 32, 0, 0, 0)
 
-[node name="WallXMinus" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="WallXMinus" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 32, -9, 3, 0)
 
-[node name="WallZMinus" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="WallZMinus" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(32, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, -9)
 
-[node name="WallXPlus" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="WallXPlus" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 32, 9, 3, 0)
 
 [node name="WallFourth" type="StaticBody3D" parent="Environment"]
@@ -147,17 +146,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("BoxShape3D_7c08l")
 
-[node name="Throne" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="Throne" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(2.83, 0, 0, 0, 1.415, 0, 0, 0, 2.83, 0, 0.331308, -13.7007)
 
-[node name="ThroneBack" parent="Environment/Throne" instance=ExtResource("1_82yl0")]
+[node name="ThroneBack" parent="Environment/Throne" instance=ExtResource("2_m32au")]
 transform = Transform3D(0.75, 0, 0, 0, 2, 0, 0, 0, 0.25, 0, 1.5, -0.271135)
 visible = false
 
-[node name="Throne2" parent="Environment" instance=ExtResource("2_36ngf")]
+[node name="Throne2" parent="Environment" instance=ExtResource("1_yev4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.241)
 
-[node name="HumanSizeReference" parent="Environment" instance=ExtResource("1_82yl0")]
+[node name="HumanSizeReference" parent="Environment" instance=ExtResource("2_m32au")]
 transform = Transform3D(0.64, 0, 0, 0, 1.76, 0, 0, 0, 0.32, 12, 1, 0)
 visible = false
 
@@ -165,7 +164,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8.78, 4.5)
 
 [node name="Destination-Setter" type="Node3D" parent="." groups=["Destination-Setter"]]
-script = ExtResource("4_fe502")
+script = ExtResource("3_betl3")
 
 [node name="MinZ" type="Node3D" parent="Destination-Setter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
@@ -192,136 +191,68 @@ directional_shadow_mode = 0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource("Environment_6d57t")
 
-[node name="aine-lighting" type="Node3D" parent="Lighting"]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 1.90735e-06, 10.1573, -5.67902)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, -3.85318, 10.1573, -1.65671)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 4.02334, 10.1573, -1.65671)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 4.05561, 10.1573, 5.34086)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, -3.9533, 10.1573, 5.33885)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, -3.79229, 10.1573, 11.2451)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D7" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 3.97731, 10.1573, 11.2451)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D8" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 0.0617414, 10.1573, 1.57781)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
-[node name="SpotLight3D9" type="SpotLight3D" parent="Lighting/aine-lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.0372193, 0.999307, 0, -0.999307, -0.0372193, 0.0617414, 10.1573, 8.27081)
-light_color = Color(0.811765, 0.764706, 0.109804, 1)
-light_energy = 1.808
-spot_range = 30.5037
-spot_angle = 25.7196
-
 [node name="Kids2" type="Node3D" parent="."]
 
-[node name="Child01" parent="Kids2" instance=ExtResource("8_4wd0m")]
+[node name="Child01" parent="Kids2" instance=ExtResource("4_4ifva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.804, -6)
 
-[node name="child_restraint2" parent="Kids2" instance=ExtResource("9_6jrwy")]
+[node name="child_restraint2" parent="Kids2" instance=ExtResource("5_15nn3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10468, -0.882509, -8.82113)
 
-[node name="Child02" parent="Kids2" instance=ExtResource("8_4wd0m")]
+[node name="Child02" parent="Kids2" instance=ExtResource("4_4ifva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.804, -6)
 
-[node name="child_restraint3" parent="Kids2" instance=ExtResource("9_6jrwy")]
+[node name="child_restraint3" parent="Kids2" instance=ExtResource("5_15nn3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89532, -0.882509, -8.82113)
 
-[node name="child_restraint4" parent="Kids2" instance=ExtResource("9_6jrwy")]
+[node name="child_restraint4" parent="Kids2" instance=ExtResource("5_15nn3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.98127, -0.882509, -0.821127)
 
-[node name="child_restraint5" parent="Kids2" instance=ExtResource("9_6jrwy")]
+[node name="child_restraint5" parent="Kids2" instance=ExtResource("5_15nn3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.89532, -0.882509, -2.82113)
 
 [node name="MembersOfTheCourt" type="Node3D" parent="."]
 
-[node name="Courtier01" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier01" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
-[node name="Courtier02" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier02" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
-[node name="Courtier03" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier03" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
-[node name="Courtier04" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier04" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
-[node name="Courtier05" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier05" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
-[node name="Courtier06" parent="MembersOfTheCourt" groups=["courtiers"] instance=ExtResource("2_lgy8v")]
+[node name="Courtier06" parent="MembersOfTheCourt" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4246, 0, 1.51083)
-script = ExtResource("5_vwgvs")
+script = ExtResource("7_vrqxu")
+alarm = 5.0
 
 [node name="Players" type="Node3D" parent="."]
 
-[node name="Player01" parent="Players" groups=["Players"] instance=ExtResource("2_lgy8v")]
+[node name="Player01" parent="Players" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4)
-script = ExtResource("3_dmxsu")
+script = ExtResource("8_g72oc")
 
 [node name="RayCast3D" type="RayCast3D" parent="Players/Player01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, 1)
-script = ExtResource("9_28123")
-char_type = 1
 
-[node name="Player02" parent="Players" groups=["Players"] instance=ExtResource("2_lgy8v")]
+[node name="Player02" parent="Players" instance=ExtResource("6_2u3v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
-script = ExtResource("3_dmxsu")
+script = ExtResource("8_g72oc")
 player_Number = 1
-
-[node name="RayCast3D" type="RayCast3D" parent="Players/Player02"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, 1)
-script = ExtResource("9_28123")
-char_type = 2
