@@ -4,7 +4,7 @@ extends Node
 # VARIABLES
 var last_pitch = 1.0 # Stores the last pitch so the same pitch doesn't play in a row
 var location
-var volume = 1.0
+var volume = -20.0
 
 # PARAMETERS
 var _dict = {
@@ -18,8 +18,9 @@ var _dict = {
 var musicloop = load("res://Audio/Music/Music.ogg")
 
 # SFX AUDIO FILES
-#var player_jump = load("res://assets/audio/sfx/playerjump.wav")
-#var player_run = load("res://assets/audio/sfx/playerfootstep.wav")
+var laugh = load("res://Audio/Sounds/laugh.ogg")
+var squelch = load("res://Audio/Sounds/squelch.ogg")
+var yelp = load("res://Audio/Sounds/yelp.ogg")
 
 #-------------------------------------------------------------------------------
 # Calling this function triggers the appropriate musc file to be played.
@@ -34,7 +35,7 @@ func stop_music(_music):
 
 #-------------------------------------------------------------------------------
 # Calling this function triggers the appropriate audio clip to be played with any
-# of the following specified parameters:
+# of the following specified parameters: 
 #   clip = sfx variable name (the sound effect to be played)
 #   location = global_transform.origin (the sfx position spatially)
 #   randomPitch: true = randomise current sfx pitch, false = don't randomise pitch.
@@ -51,32 +52,6 @@ func play_sfx(clip, params = null):
 			child.stream = clip # Sets the stream to the desired sfx clip
 			child.volume_db = volume
 			
-			# Matches the sfx player location with that of the sfx source location
-			if params != null:
-				
-				if params.has("location"):
-					child.global_transform.origin = params["location"]
-				else:
-					var camera = get_tree().get_nodes_in_group("camera")
-					camera = camera[0]
-					child.global_transform.origin = camera.global_position
-				
-				if params.has("volume"):
-					child.volume_db = params["volume"]
-				
-				# Randomise pitch if the parameters randomPitchRange are defined
-				randomize()
-				if params.has("randomPitch"): # or params.has("pitch2"):
-					child.pitch_scale = randf_range(params["randomPitch"][0],params["randomPitch"][1])
-					while abs(child.pitch_scale - last_pitch) < .1:
-						randomize()
-						child.pitch_scale = randf_range(params["randomPitch"][0],params["randomPitch"][1])
-					last_pitch = child.pitch_scale
-				
-			else:
-					var camera = get_tree().get_nodes_in_group("camera")
-					camera = camera[0]
-					child.global_transform.origin = camera.global_position
 			
 			child.play() # Play sfx
 			return

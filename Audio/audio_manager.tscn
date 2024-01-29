@@ -3,32 +3,32 @@
 [ext_resource type="AudioStream" uid="uid://cyhslcuvr1e8o" path="res://Audio/Music/Music.ogg" id="1_a8bme"]
 [ext_resource type="Script" path="res://Audio/audio_manager.gd" id="1_rejq2"]
 
-[node name="AudioManager" type="Node3D"]
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_rejq2")
 
 [node name="music_player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_a8bme")
 volume_db = -14.0
 autoplay = true
 
-[node name="sfx_player" type="Node3D" parent="."]
+[node name="sfx_player" type="Node" parent="."]
 
-[node name="sfx_player_1" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_2" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_3" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_3" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_4" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_4" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_5" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_5" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_6" type="AudioStreamPlayer3D" parent="sfx_player"]
-script = ExtResource("1_rejq2")
+[node name="sfx_player_6" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_7" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_7" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_8" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_8" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_9" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_9" type="AudioStreamPlayer" parent="sfx_player"]
 
-[node name="sfx_player_10" type="AudioStreamPlayer3D" parent="sfx_player"]
+[node name="sfx_player_10" type="AudioStreamPlayer" parent="sfx_player"]

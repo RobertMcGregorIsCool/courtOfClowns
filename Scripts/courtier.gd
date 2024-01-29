@@ -85,6 +85,8 @@ func _squared_magnitude(vect : Vector3):
 	return ((vect.x * vect.x) + (vect.y * vect.y) + (vect.z * vect.z))
 
 func go_chase_mode(playerToChase : CharacterBody3D):
+	AudioManager.play_sfx(AudioManager.yelp,{"volume":0})
+	AudioManager.play_sfx(AudioManager.laugh,{"volume":0})
 	if(!chaseMode):
 		chaseMode = true
 		move_speed = chase_speed
