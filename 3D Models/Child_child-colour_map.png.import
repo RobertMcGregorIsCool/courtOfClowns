@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://c4epiumm57w8i"
+=======
+uid="uid://bots8mukvb4ps"
+>>>>>>> bf8cb38638c0061fdfa1ed97847fa064f1e3e6dc
 path.s3tc="res://.godot/imported/Child_child-colour_map.png-ae0761ab346b6db3f5d120e712c22e00.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],

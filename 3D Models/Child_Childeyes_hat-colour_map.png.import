@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cl53l8bcfx7pk"
+=======
+uid="uid://bb0fsm3cl3oxw"
+>>>>>>> bf8cb38638c0061fdfa1ed97847fa064f1e3e6dc
 path.s3tc="res://.godot/imported/Child_Childeyes_hat-colour_map.png-5304ff53c5bd3b922e6eb71fe6365113.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
