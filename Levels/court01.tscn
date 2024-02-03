@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/courtier.gd" id="5_vwgvs"]
 [ext_resource type="PackedScene" uid="uid://qrtf7q0fsavr" path="res://3D Models/Child.glb" id="8_4wd0m"]
 [ext_resource type="PackedScene" uid="uid://jqo04pbswlst" path="res://3D Models/child_restraint.glb" id="9_6jrwy"]
-[ext_resource type="Script" path="res://Levels/Interact.gd" id="9_28123"]
+[ext_resource type="Script" path="res://Scripts/Interact.gd" id="9_28123"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gt2ya"]
 
